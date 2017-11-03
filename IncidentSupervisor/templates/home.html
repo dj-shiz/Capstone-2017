@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load render_table from django_tables2 %}
+
+{% block content %}
+<div class="container">
+<div class="row">
+<div class="jumbotron">
+  <h1>Welcome {{request.user.username}}</h1><br>
+  <form class="form-inline" method="get">
+    {{ filter.form }}
+    <button type="submit">Go</button>
+  </form><br>
+  {% render_table table %}
+</div>
+</div>
+</div>
+{% endblock %}
